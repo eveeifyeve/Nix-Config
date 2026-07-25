@@ -33,6 +33,12 @@
       };
     };
 
+    nixos.modules.iso = {
+      nix = {
+        inherit (config.nix) settings;
+      };
+    };
+
     darwin.modules.base = {
       nix = {
         inherit (config.nix) settings;
