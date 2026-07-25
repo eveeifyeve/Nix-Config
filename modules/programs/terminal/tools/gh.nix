@@ -1,20 +1,17 @@
 {
-  homeManager.modules.base =
-    { pkgs, ... }:
-    {
-      programs.gh = {
-        enable = true;
-        settings = {
-          git_protocol = "ssh";
-          prompt = "enabled";
+  homeManager.modules.base = {
+    programs.gh-dash.enable = true;
+    programs.gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+        prompt = "enabled";
 
-          aliases = {
-            co = "pr checkout";
-            pv = "pr view";
-          };
+        aliases = {
+          co = "pr checkout";
+          pv = "pr view";
         };
       };
-
-      home.packages = [ pkgs.gh-dash ];
     };
+  };
 }
