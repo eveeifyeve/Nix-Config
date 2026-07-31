@@ -124,6 +124,7 @@ in
       };
       programs.gh = {
         enable = true;
+        extensions = [ pkgs.gh-stack ];
         settings = {
           git_protocol = "ssh";
           prompt = "enabled";
