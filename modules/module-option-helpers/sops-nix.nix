@@ -112,6 +112,7 @@ in
       {
         home.sessionVariables.SOPS_AGE_RECIPIENTS = lib.concatStringsSep "," cfg.keys;
         home.packages = [ pkgs.sops ];
+        sops.defaultSopsFormat = "binary";
         imports = [
           inputs.sops-nix.homeManagerModules.sops
         ];

@@ -1,9 +1,6 @@
 {
   home.base = hmArgs: {
-    sops.secrets.openrouter-apikey-eveeifyeve = {
-      sopsFile = ./secrets/openrouter-apikey;
-      format = "binary";
-    };
+    sops.secrets.openrouter-apikey-eveeifyeve.sopsFile = ./secrets/openrouter-apikey;
 
     programs.opencode.settings = {
       model = "alibaba/qwen3-coder-30b-a3b-instruct";
