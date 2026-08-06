@@ -23,7 +23,7 @@
         servers = {
           Oftc = {
             server = "irc.oftc.net";
-            nickname = "Eveeifyeve";
+            nickname = "eveeifyeve";
             port = 6697;
 
             sasl.external = {
@@ -33,7 +33,7 @@
           };
           Libera = {
             server = "irc.libera.chat";
-            nickname = "Eveeifyeve";
+            nickname = "eveeifyeve";
             port = 6697;
             channels = [ "#halloy" ];
 
