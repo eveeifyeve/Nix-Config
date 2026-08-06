@@ -97,6 +97,7 @@
         treefmt-nix.follows = "treefmt";
       };
     };
+    nix.url = "github:NixOS/nix";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";

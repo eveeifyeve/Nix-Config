@@ -43,6 +43,10 @@
       nix = {
         inherit (config.nix) settings;
       };
+
+      nix.linux-builder.config.nix = {
+        inherit (config.nix) settings;
+      };
     };
   };
 }
