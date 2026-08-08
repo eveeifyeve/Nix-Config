@@ -1,6 +1,7 @@
 { config, ... }:
 {
   darwin.configurations.andromeda-macbook.module = {
+    services.nix-daemon.logFile = "/var/log/nix-daemon.log";
     nixpkgs.hostPlatform.system = "aarch64-darwin";
     nix.settings.trusted-users = [
       "root"
