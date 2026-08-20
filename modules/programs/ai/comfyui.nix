@@ -15,7 +15,7 @@
 
       comfyui-pr = import comfyui-pr-drv { inherit (pkgs) system; };
     in
-    lib.mkIf pkgs.stdenv.isLinux {
+    lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
       home.packages = [ comfyui-pr.comfyui ];
     };
 

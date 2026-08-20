@@ -14,7 +14,7 @@
   #             pkg-config
   #             libsForQt5.wrapQtAppsHook
   #           ]
-  #           ++ lib.optionals stdenv.isLinux [
+  #           ++ lib.optionals stdenv.hostPlatform.isLinux [
   #             udevCheckHook
   #           ];
   #         buildInputs =
@@ -29,12 +29,12 @@
   #             libsndfile
   #             libmad
   #           ]
-  #           ++ lib.optionals stdenv.isLinux [
+  #           ++ lib.optionals stdenv.hostPlatform.isLinux [
   #             udev
   #             alsa-lib
   #             ola
   #           ]
-  #           ++ lib.optionals stdenv.isDarwin [
+  #           ++ lib.optionals stdenv.hostPlatform.isDarwin [
   #             apple-sdk
   #             # darwin-specific deps go here
   #           ];

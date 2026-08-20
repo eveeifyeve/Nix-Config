@@ -17,7 +17,7 @@
     {
       imports = [ inputs.zen-browser.homeModules.beta ];
       stylix.targets.zen-browser.profileNames = [ "default" ];
-      targets.darwin.defaults = lib.mkIf pkgs.stdenv.isDarwin {
+      targets.darwin.defaults = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
         "app.zen-browser.zen" = {
           EnterprisePoliciesEnabled = true;
         }
@@ -27,8 +27,8 @@
       programs.zen-browser = {
         enable = true;
         setAsDefaultBrowser = true;
-        nativeMessagingHosts = lib.mkIf pkgs.stdenv.isLinux [ pkgs.firefoxpwa ];
-        package = lib.mkIf pkgs.stdenv.isDarwin (
+        nativeMessagingHosts = lib.mkIf pkgs.stdenv.hostPlatform.isLinux [ pkgs.firefoxpwa ];
+        package = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin (
           pkgs.lib.makeOverridable (
             _:
             inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta-unwrapped.overrideAttrs (old: {

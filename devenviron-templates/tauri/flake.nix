@@ -67,11 +67,11 @@
               pkgs.pkgs-config
               toolchain
             ]
-            ++ lib.optionals pkgs.stdenv.isLinux [
+            ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [
               pkgs.webkitgtk_4_1
               pkgs.glib-networking
             ]
-            ++ lib.optionals pkgs.stdenv.isDarwin [
+            ++ lib.optionals pkgs.stdenv.hostPlatform.isDarwin [
               pkgs.apple_sdk
             ];
           };

@@ -18,6 +18,6 @@
       };
     in
     {
-      home.packages = lib.mkIf pkgs.stdenv.isDarwin [ nixpkgs-491420.roblox ];
+      home.packages = lib.mkIf pkgs.stdenv.hostPlatform.isDarwin [ nixpkgs-491420.roblox ];
     };
 }

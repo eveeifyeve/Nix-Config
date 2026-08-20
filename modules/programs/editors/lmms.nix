@@ -6,6 +6,6 @@
   homeManager.modules.gui =
     { pkgs, ... }:
     {
-      home.packages = lib.optionals pkgs.stdenv.isLinux [ pkgs.lmms-full ];
+      home.packages = lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.lmms-full ];
     };
 }

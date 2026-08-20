@@ -8,7 +8,7 @@
   homeManager.modules.gui =
     { pkgs, ... }:
     {
-      home.packages = lib.mkIf pkgs.stdenv.isLinux [
+      home.packages = lib.mkIf pkgs.stdenv.hostPlatform.isLinux [
         pkgs.rustdesk-flutter
       ];
     };

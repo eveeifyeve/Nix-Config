@@ -21,11 +21,11 @@
         enable = true;
         discord.enable = false; # Disable other discords and only use vesktop (Darwin) & Equibop (Linux)
         vesktop = {
-          enable = pkgs.stdenv.isDarwin;
+          enable = pkgs.stdenv.hostPlatform.isDarwin;
           settings.arRPC = true;
         };
         equibop = {
-          enable = pkgs.stdenv.isLinux;
+          enable = pkgs.stdenv.hostPlatform.isLinux;
           settings.arRPC = true;
         };
       };

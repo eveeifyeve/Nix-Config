@@ -6,6 +6,6 @@
   homeManager.modules.gui =
     { pkgs, ... }:
     {
-      home.packages = lib.mkIf pkgs.stdenv.isLinux [ pkgs.gimp ];
+      home.packages = lib.mkIf pkgs.stdenv.hostPlatform.isLinux [ pkgs.gimp ];
     };
 }

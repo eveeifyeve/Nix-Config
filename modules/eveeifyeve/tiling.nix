@@ -3,7 +3,7 @@
   home.gui =
     { pkgs, config, ... }:
     lib.mkMerge [
-      (lib.mkIf pkgs.stdenv.isDarwin {
+      (lib.mkIf pkgs.stdenv.hostPlatform.isDarwin {
         #TODO: switch to rift: https://github.com/acsandmann/rift
         programs.aerospace.settings = {
           enable-normalization-flatten-containers = true;
@@ -67,7 +67,7 @@
           ];
         };
       })
-      (lib.mkIf pkgs.stdenv.isLinux {
+      (lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
         wayland.windowManager.hyprland.settings = {
           general.gaps_in = 15;
           general.gaps_out = "70,15,15,15";

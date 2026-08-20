@@ -26,7 +26,7 @@ in
 
   homeManager.modules.gui =
     { pkgs, ... }:
-    lib.mkIf pkgs.stdenv.isLinux {
+    lib.mkIf pkgs.stdenv.hostPlatform.isLinux {
       wayland.windowManager.hyprland.enable = lib.mkDefault true;
     };
 }
