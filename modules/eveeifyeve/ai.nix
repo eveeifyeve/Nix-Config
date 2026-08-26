@@ -1,5 +1,5 @@
 {
-  home.base = hmArgs: {
+  home.gui = hmArgs: {
     sops.secrets.openrouter-apikey-eveeifyeve.sopsFile = ./secrets/openrouter-apikey;
 
     programs.opencode.settings = {

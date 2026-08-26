@@ -61,7 +61,7 @@
   config =
     lib.genAttrs [ "nixos" "darwin" ] (_: {
       modules = {
-        base = {
+        gui = {
           home-manager.users =
             config.users
             |> lib.mapAttrs (
