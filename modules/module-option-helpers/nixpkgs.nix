@@ -54,7 +54,15 @@ in
         );
       };
 
-    nixos.modules.base = cfg.polyModule;
+    nixos.modules.nixos = cfg.polyModule;
+    nixos.modules.finix = {
+      nixpkgs.pkgs = import inputs.nixpkgs (
+        {
+          system = builtins.currentSystem;
+        }
+        // cfg.args
+      );
+    };
     nixos.modules.iso = cfg.polyModule;
     darwin.modules.base = cfg.polyModule;
     homeManager.modules.base = cfg.polyModule;

@@ -18,6 +18,7 @@ in
             evalModulesModule
             {
               fn = inputs.finix.lib.finixSystem;
+              args = { inherit lib; };
               module = {
                 networking.hostName = lib.mkDefault name;
               };

@@ -2,6 +2,9 @@
 {
   finix.configurations.netdromeda.module = {
     nixpkgs.hostPlatform = "x86_64-linux";
-    imports = [ config.nixos.modules.base ];
+    imports = [
+      config.nixos.modules.base
+      config.nixos.modules.finix
+    ];
   };
 }

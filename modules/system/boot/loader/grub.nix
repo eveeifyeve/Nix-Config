@@ -1,5 +1,5 @@
 {
-  nixos.modules.base = {
+  nixos.modules.nixos = {
     boot.loader.grub = {
       enable = true;
       efiSupport = true;
