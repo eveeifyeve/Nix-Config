@@ -1,5 +1,5 @@
 {
-  nixos.modules.finix =
+  finix.modules.base =
     { pkgs, ... }:
     {
       boot.loader.limine = {

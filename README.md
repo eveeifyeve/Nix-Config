@@ -21,6 +21,7 @@ System configuration for my machines using the [Dendritic pattern][Dendritic] �
 | nix-on-droid | 🚧 In progress |
 | nix-bsd | 🟠 (Highly expermential & not tested) |
 | nix-windows | ❌ (Will work on it once nix-windows exists) |
+| Finix | 🟠 (Highly expermential, however not working currently) |
 | System-Manager | 🟠 (Highly expermential, not tested & missing module support) |
 Need support for another platform? [Open a GitHub issue][issues] if one doesn't already exist (don't open a new issue if one exists, just 👍 if you think it's important).
 

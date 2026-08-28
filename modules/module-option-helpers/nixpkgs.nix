@@ -54,8 +54,8 @@ in
         );
       };
 
-    nixos.modules.nixos = cfg.polyModule;
-    nixos.modules.finix = {
+    nixos.modules.base = cfg.polyModule;
+    finix.modules.base = {
       nixpkgs.pkgs = import inputs.nixpkgs (
         {
           system = builtins.currentSystem;
