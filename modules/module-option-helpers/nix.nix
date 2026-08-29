@@ -7,6 +7,8 @@
   options.nix.settings = {
     keep-outputs = lib.mkOption { type = lib.types.bool; };
     accept-flake-config = lib.mkOption { type = lib.types.bool; };
+    always-allow-substitutes = lib.mkOption { type = lib.types.bool; };
+
     experimental-features = lib.mkOption {
       type = lib.types.listOf lib.types.singleLineStr;
       default = [ ];
