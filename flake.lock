@@ -335,6 +335,28 @@
         "type": "github"
       }
     },
+    "firefox-addons": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "dir": "pkgs/firefox-addons",
+        "lastModified": 1787976477,
+        "narHash": "sha256-N4ljMPGSikj3Yl4EZv7xa6KSGkmm+G5wFZBhnOCwqZw=",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "rev": "2e2c50de599df9787f6aa735ceea0a7aabcfae2a",
+        "type": "gitlab"
+      },
+      "original": {
+        "dir": "pkgs/firefox-addons",
+        "owner": "rycee",
+        "repo": "nur-expressions",
+        "type": "gitlab"
+      }
+    },
     "firefox-gnome-theme": {
       "flake": false,
       "locked": {
@@ -1503,29 +1525,6 @@
     "nur": {
       "inputs": {
         "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1787923245,
-        "narHash": "sha256-EB8Ut4oG360df8tS9p/pHXitA/gRQ81UZcyFAlZ/1Zc=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "55fb6dfb97b1baf69a6ad5f23659f33ead701b4e",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
-    "nur_2": {
-      "inputs": {
-        "flake-parts": [
           "stylix",
           "flake-parts"
         ],
@@ -1557,6 +1556,7 @@
         "disko": "disko",
         "files": "files",
         "finix": "finix",
+        "firefox-addons": "firefox-addons",
         "flake-compat": "flake-compat",
         "flake-file": "flake-file",
         "flake-parts": "flake-parts",
@@ -1578,7 +1578,6 @@
         "nixpkgs": "nixpkgs_3",
         "nixpkgs-kotlin-lsp": "nixpkgs-kotlin-lsp",
         "nixvim": "nixvim",
-        "nur": "nur",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "system-manager": "system-manager",
@@ -1621,7 +1620,7 @@
         "nixpkgs": [
           "nixpkgs"
         ],
-        "nur": "nur_2",
+        "nur": "nur",
         "systems": [
           "systems"
         ],

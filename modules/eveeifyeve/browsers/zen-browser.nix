@@ -1,5 +1,11 @@
+{ inputs, ... }:
 {
   nixpkgs.config.allowUnfreePackages = [ "tampermonkey" ];
+  flake-file.inputs.firefox-addons = {
+    url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
+
   home.gui =
     { pkgs, ... }:
     {
@@ -87,7 +93,7 @@
             };
           };
 
-          extensions.packages = with pkgs.nur.repos.rycee.firefox-addons; [
+          extensions.packages = with inputs.firefox-addons.packages.${pkgs.system}; [
             darkreader
             zen-internet
             ublock-origin
