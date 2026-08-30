@@ -1,6 +1,5 @@
 { inputs, ... }:
 {
-  nixpkgs.config.allowUnfreePackages = [ "tampermonkey" ];
   flake-file.inputs.firefox-addons = {
     url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
     inputs.nixpkgs.follows = "nixpkgs";
@@ -102,7 +101,7 @@
             refined-github
             youtube-nonstop
             return-youtube-dislikes
-            tampermonkey
+            violentmonkey
           ];
 
           mods = [
@@ -111,13 +110,13 @@
           ];
         };
 
-        policies."3rdparty".Extensions."firefox@tampermonkey.net".jsonImport = [
-          {
-            hash = "1:66849534c66c5bd384f39f7fb5c7c5bdbc8611bfedab082762cb943f853637d0";
-            url = "https://raw.githubusercontent.com/Eveeifyeve/nixpkgs-review-gha/refs/heads/main/shortcut.user.js";
-            installAsSystemScripts = true;
-          }
-        ];
+        # policies."3rdparty".Extensions."firefox@tampermonkey.net".jsonImport = [
+        #   {
+        #     hash = "1:66849534c66c5bd384f39f7fb5c7c5bdbc8611bfedab082762cb943f853637d0";
+        #     url = "https://raw.githubusercontent.com/Eveeifyeve/nixpkgs-review-gha/refs/heads/main/shortcut.user.js";
+        #     installAsSystemScripts = true;
+        #   }
+        # ];
       };
     };
 }
