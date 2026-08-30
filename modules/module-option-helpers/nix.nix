@@ -47,7 +47,7 @@
       "flakes"
     ];
 
-    nixos.modules.base = {
+    nixos.modules.nixos = {
       imports = [ config.nix.polyModule ];
     };
 

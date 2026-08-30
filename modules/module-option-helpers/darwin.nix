@@ -42,7 +42,7 @@ in
     };
 
     # For Nixd
-    nixos.modules.base = {
+    nixos.modules.nixos = {
       nix.nixPath = [ "nix-darwin=${inputs.nix-darwin}" ];
     };
 

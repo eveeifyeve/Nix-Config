@@ -38,10 +38,26 @@ in
         nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
       };
     };
+
+    finixPoly = lib.mkOption {
+      readOnly = true;
+      type = lib.types.deferredModule;
+      default = {
+        nixpkgs = cfg.args;
+      };
+    };
   };
 
   config = {
-    flake-file.inputs.nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
+    flake-file.inputs = {
+      nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
+
+      # Temp poly module.
+      finix-nixpkgs-poly = {
+        url = "github:eveeifyeve/nixpkgs-finix-poly";
+        inputs.nixpkgs.follows = "nixpkgs";
+      };
+    };
 
     perSystem =
       { system, ... }:
@@ -54,15 +70,11 @@ in
         );
       };
 
-    nixos.modules.base = cfg.polyModule;
+    nixos.modules.nixos = cfg.polyModule;
     finix.modules.base = {
-      nixpkgs.pkgs = import inputs.nixpkgs (
-        {
-          system = builtins.currentSystem;
-        }
-        // cfg.args
-      );
-    };
+      imports = [ inputs.finix-nixpkgs-poly.nixosModules.default ];
+    }
+    // cfg.finixPoly;
     nixos.modules.iso = cfg.polyModule;
     darwin.modules.base = cfg.polyModule;
     homeManager.modules.base = cfg.polyModule;

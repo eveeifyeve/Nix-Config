@@ -39,6 +39,10 @@
       flake = false;
     };
     finix.url = "github:finix-community/finix";
+    finix-nixpkgs-poly = {
+      url = "github:eveeifyeve/nixpkgs-finix-poly";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     firefox-addons = {
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";

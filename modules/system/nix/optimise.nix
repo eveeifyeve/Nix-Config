@@ -1,5 +1,5 @@
 {
-  nixos.modules.base = {
+  nixos.modules.nixos = {
     nix.optimise.automatic = true;
   };
 

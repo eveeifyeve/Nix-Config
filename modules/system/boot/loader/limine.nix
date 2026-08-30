@@ -2,7 +2,7 @@
   finix.modules.base =
     { pkgs, ... }:
     {
-      boot.loader.limine = {
+      programs.limine = {
         enable = true;
         efiSupport = true;
         efiInstallAsRemovable = true;

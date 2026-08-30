@@ -21,7 +21,7 @@ in
     inputs.flake-compat.follows = "flake-compat";
   };
 
-  nixos.modules.base =
+  nixos.modules.nixos =
     { pkgs, ... }:
     {
       imports = [ inputs.comin.nixosModules.comin ];

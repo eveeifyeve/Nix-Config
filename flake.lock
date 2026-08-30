@@ -322,16 +322,36 @@
     },
     "finix": {
       "locked": {
-        "lastModified": 1787524290,
-        "narHash": "sha256-mU5vhbdK8uBO1Cgc7pxUo5OadG2mb+TbU1mFhylEZz4=",
+        "lastModified": 1788022531,
+        "narHash": "sha256-iK07bV4X0bCFQ9zhyPEkT4o7g5w7V5ieWXwGtNFEcsE=",
         "owner": "finix-community",
         "repo": "finix",
-        "rev": "78fd549fa5410ad1e5683efbba2d0f1728c12f3d",
+        "rev": "4da4923c1b973c48dbf3fddfe19beefbe4f22955",
         "type": "github"
       },
       "original": {
         "owner": "finix-community",
         "repo": "finix",
+        "type": "github"
+      }
+    },
+    "finix-nixpkgs-poly": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788101235,
+        "narHash": "sha256-uMJa00JRpwKmWdJutsWdF2PzY27F1NrvMugL+YxsSdc=",
+        "owner": "eveeifyeve",
+        "repo": "nixpkgs-finix-poly",
+        "rev": "fcaffedfe6e8408e039fd9caee4d1e218a15c1f4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "eveeifyeve",
+        "repo": "nixpkgs-finix-poly",
         "type": "github"
       }
     },
@@ -1556,6 +1576,7 @@
         "disko": "disko",
         "files": "files",
         "finix": "finix",
+        "finix-nixpkgs-poly": "finix-nixpkgs-poly",
         "firefox-addons": "firefox-addons",
         "flake-compat": "flake-compat",
         "flake-file": "flake-file",
