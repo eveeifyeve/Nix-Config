@@ -4,48 +4,55 @@
   ...
 }:
 {
-  options.nix.settings = {
-    keep-outputs = lib.mkOption { type = lib.types.bool; };
-    accept-flake-config = lib.mkOption { type = lib.types.bool; };
-    always-allow-substitutes = lib.mkOption { type = lib.types.bool; };
+  options.nix = {
+    settings = {
+      keep-outputs = lib.mkOption {
+        readOnly = true;
+        type = lib.types.bool;
+        default = true;
+      };
+      accept-flake-config = lib.mkOption {
+        readOnly = true;
+        type = lib.types.bool;
+        default = true;
+      };
+      always-allow-substitutes = lib.mkOption {
+        type = lib.types.bool;
+        default = false;
+      };
 
-    experimental-features = lib.mkOption {
-      type = lib.types.listOf lib.types.singleLineStr;
-      default = [ ];
-    };
-    extra-system-features = lib.mkOption {
-      type = lib.types.listOf lib.types.singleLineStr;
-      default = [ ];
+      experimental-features = lib.mkOption {
+        type = lib.types.listOf lib.types.singleLineStr;
+        default = [ ];
+      };
+      extra-system-features = lib.mkOption {
+        type = lib.types.listOf lib.types.singleLineStr;
+        default = [ ];
+      };
     };
 
+    polyModule = lib.mkOption {
+      readOnly = true;
+      type = lib.types.deferredModule;
+      default = {
+        nix.settings = config.nix.settings // {
+          builders-use-substitutes = config.nix.settings.always-allow-substitutes;
+        };
+      };
+    };
   };
   config = {
-    nix.settings = {
-      accept-flake-config = true;
-      keep-outputs = true;
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-    };
+    nix.settings.experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
 
     nixos.modules.base = {
-      nix = {
-        inherit (config.nix) settings;
-      };
-    };
-
-    nixos.modules.iso = {
-      nix = {
-        inherit (config.nix) settings;
-      };
+      imports = [ config.nix.polyModule ];
     };
 
     darwin.modules.base = {
-      nix = {
-        inherit (config.nix) settings;
-      };
-
+      imports = [ config.nix.polyModule ];
       nix.linux-builder.config.nix = {
         inherit (config.nix) settings;
       };
