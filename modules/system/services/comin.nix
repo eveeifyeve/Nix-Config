@@ -6,7 +6,7 @@ let
     remotes = [
       {
         name = "origin";
-        url = "https://github.com/eveeifeyve/dotfiles.git";
+        url = "https://github.com/eveeifeyve/Nix-Config.git";
         branches = {
           testing.name = "";
         };

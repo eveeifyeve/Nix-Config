@@ -1,5 +1,5 @@
-# Dotfiles
-System configuration for my machines using the [Dendritic pattern][Dendritic] — a structured way to organise NixOS/nix configurations as reusable modules that anyone can adopt.
+# ❄️ My Nix Config 
+Configuration for my personal machines using the [Dendritic pattern][Dendritic] — a structured way to organise NixOS/nix configurations as reusable modules that anyone can adopt.
 
 # Features
 
@@ -37,7 +37,7 @@ sudo nix run nix-darwin/master#darwin-rebuild -- switch --flake /etc/nixos
 
 * NixOS (Manual):
 ```
-nix run --extra-experimental-features "nix-command flakes" nixpkgs#git -- clone https://github.com/eveeifyeve/dotfiles /etc/nixos
+nix run --extra-experimental-features "nix-command flakes" nixpkgs#git -- clone https://github.com/eveeifyeve/Nix-Config /etc/nixos
 sudo nixos-rebuild switch --flake /etc/nixos#<your-hostname>
 ```
 ---
