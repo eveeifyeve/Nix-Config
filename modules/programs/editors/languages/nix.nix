@@ -26,5 +26,13 @@
           };
         };
       };
+
+      files."after/ftplugin/nix.lua" = {
+        localOpts = {
+          expandtab = true;
+          tabstop = 2;
+          shiftwidth = 2;
+        };
+      };
     };
 }
