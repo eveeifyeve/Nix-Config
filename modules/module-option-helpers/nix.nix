@@ -53,9 +53,6 @@
 
     darwin.modules.base = {
       imports = [ config.nix.polyModule ];
-      nix.linux-builder.config.nix = {
-        inherit (config.nix) settings;
-      };
     };
   };
 }
