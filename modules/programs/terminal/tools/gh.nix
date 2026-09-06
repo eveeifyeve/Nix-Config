@@ -34,7 +34,7 @@ let
   ];
 in
 {
-  homeManager.modules.base =
+  homeManager.modules.gui =
     { pkgs, ... }:
     {
       programs.gh-dash = {

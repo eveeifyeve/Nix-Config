@@ -1,5 +1,5 @@
 {
-  homeManager.modules.base =
+  homeManager.modules.gui =
     { pkgs, ... }:
     {
       home.packages = [ pkgs.mob ];

@@ -1,5 +1,5 @@
 {
-  homeManager.modules.base = {
+  homeManager.modules.gui = {
     home.shellAliases.lg = "lazygit";
     programs.lazygit = {
       enable = true;

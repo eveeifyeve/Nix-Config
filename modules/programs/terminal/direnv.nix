@@ -6,7 +6,7 @@
     inputs.flake-parts.follows = "flake-parts";
   };
 
-  homeManager.modules.base = {
+  homeManager.modules.gui = {
     imports = [
       inputs.direnv-instant.homeModules.direnv-instant
     ];

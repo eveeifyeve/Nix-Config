@@ -18,7 +18,7 @@
 
     _module.args.homeManager = inputs.home-manager.lib;
 
-    nixos.modules.base =
+    nixos.modules.gui =
       { pkgs, ... }:
       {
         home-manager.backupCommand = lib.getExe' pkgs.trash-cli "trash-put";

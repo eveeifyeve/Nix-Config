@@ -1,5 +1,5 @@
 {
-  homeManager.modules.base = {
+  homeManager.modules.gui = {
     programs.starship.enable = true;
   };
 }
