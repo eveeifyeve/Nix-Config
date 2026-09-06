@@ -75,7 +75,6 @@ in
       imports = [ inputs.finix-nixpkgs-poly.nixosModules.default ];
     }
     // cfg.finixPoly;
-    nixos.modules.iso = cfg.polyModule;
     darwin.modules.base = cfg.polyModule;
     homeManager.modules.base = cfg.polyModule;
   };

@@ -54,24 +54,6 @@ in
   config = {
     nixos.modules = {
       gui.home-manager.users = cfg |> lib.mapAttrs (_: { home, ... }: home.gui);
-      iso =
-        { pkgs, ... }:
-        {
-          users = {
-            defaultUserShell = pkgs.zsh;
-            users =
-              cfg
-              |> lib.mapAttrs (
-                _:
-                { username, ... }:
-                {
-                  name = username;
-                  isNormalUser = true;
-                  useDefaultShell = lib.mkDefault true;
-                }
-              );
-          };
-        };
       base =
         { pkgs, ... }:
         {
