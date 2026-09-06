@@ -4,7 +4,7 @@
     {
       nix.linux-builder = {
         enable = true;
-        package = pkgs.darwin.linux-builder-vz;
+        package = pkgs.darwin.linux-builder;
         ephemeral = true;
         systems = [
           "x86_64-linux"
