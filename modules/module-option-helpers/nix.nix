@@ -16,10 +16,6 @@
         type = lib.types.bool;
         default = true;
       };
-      always-allow-substitutes = lib.mkOption {
-        type = lib.types.bool;
-        default = false;
-      };
 
       experimental-features = lib.mkOption {
         type = lib.types.listOf lib.types.singleLineStr;
@@ -35,9 +31,7 @@
       readOnly = true;
       type = lib.types.deferredModule;
       default = {
-        nix.settings = config.nix.settings // {
-          builders-use-substitutes = config.nix.settings.always-allow-substitutes;
-        };
+        nix.settings = config.nix.settings;
       };
     };
   };
