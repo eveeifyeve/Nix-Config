@@ -96,15 +96,6 @@
       };
     };
     import-tree.url = "github:denful/import-tree";
-    llm-agents = {
-      url = "github:numtide/llm-agents.nix";
-      inputs = {
-        flake-parts.follows = "flake-parts";
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-        treefmt-nix.follows = "treefmt";
-      };
-    };
     nix.url = "github:NixOS/nix";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
