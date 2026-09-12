@@ -6,7 +6,7 @@ Configuration for my personal machines using the [Dendritic pattern][Dendritic] 
 * A devshell with handy hooks to keep your config orgnised,
 * A formatter set under the flake makes it easy as one command `nix fmt` to format the codebase,
 * Flake Templates such as language specific environments 
-* Module option Helpers template that offers module Helpers such as (nixvim, nix-darwin, nixos, nixpkgs, etc..) available such as an easy `nix flake init -t github:eveeifyeve/dotfiles#module-option-helpers`
+* Module option Helpers template that offers module Helpers such as (nixvim, nix-darwin, nixos, nixpkgs, etc..) available such as an easy `nix flake init -t github:eveeifyeve/dotfiles#option-helpers`
 * A good configuration examples
 
 

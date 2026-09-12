@@ -1,5 +1,5 @@
 let
-  devEnvTemplates = ../devenviron-templates;
+  devEnvTemplates = ../../devenviron-templates;
 in
 {
   flake.templates = {
@@ -29,9 +29,9 @@ in
       description = "Java Template";
     };
 
-    module-option-helpers = {
-      path = ./module-option-helpers;
-      description = "Some very useful module helpers.";
+    option-helpers = {
+      path = ../option-helpers;
+      description = "Some very useful option module helpers.";
     };
   };
 }
