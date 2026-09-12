@@ -2,7 +2,7 @@
 let
   polyModule = pkgs: {
     enable = true;
-    desktop.enable = lib.mkIf pkgs.stdenv.hostPlatform.isLinux;
+    desktop.enable = lib.mkIf pkgs.stdenv.hostPlatform.isLinux true;
     remotes = [
       {
         name = "origin";
