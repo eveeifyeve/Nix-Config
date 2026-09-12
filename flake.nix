@@ -61,7 +61,7 @@
       };
     };
     home-manager = {
-      url = "github:eveeifyeve/home-manager/test";
+      url = "github:eveeifyeve/home-manager/rift";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     homebrew-cask = {
