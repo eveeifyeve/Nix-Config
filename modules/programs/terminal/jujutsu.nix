@@ -28,6 +28,17 @@
       };
 
       settings.aliases = {
+        sq = [ "squash" ];
+        conflicts = [
+          "resolve"
+          "--list"
+        ];
+        l = [
+          "log"
+          "-r"
+          "ancestors(trunk()..@)"
+        ];
+
         # st = "status -s";
         # sta = "status";
         # ci = "commit";
