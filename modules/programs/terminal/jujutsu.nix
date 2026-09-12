@@ -1,12 +1,32 @@
-{ config, ... }:
+{ inputs, config, ... }:
 {
-  home.base = {
+  flake-file.inputs.jj-gh = {
+    url = "github:mrjones2014/jj-gh";
+    inputs.nixpkgs.follows = "nixpkgs";
+    inputs.treefmt-nix.follows = "treefmt";
+  };
+
+  home.gui = {
     programs.jujutsu.settings.user = { inherit (config.users.eveeifyeve) name email; };
   };
 
-  homeManager.modules.base = {
+  homeManager.modules.gui = {
+    imports = [ inputs.jj-gh.homeManagerModules.default ];
     programs.jujutsu = {
       enable = true;
+      gh = {
+        enable = true;
+        settings = {
+          upstream_remote = "upstream";
+          auto_push = true;
+          gh_askpass = [
+            "gh"
+            "auth"
+            "token"
+          ];
+        };
+      };
+
       settings.aliases = {
         # st = "status -s";
         # sta = "status";

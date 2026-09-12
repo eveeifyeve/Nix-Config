@@ -96,6 +96,13 @@
       };
     };
     import-tree.url = "github:denful/import-tree";
+    jj-gh = {
+      url = "github:mrjones2014/jj-gh";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        treefmt-nix.follows = "treefmt";
+      };
+    };
     nix.url = "github:NixOS/nix";
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
