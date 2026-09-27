@@ -13,6 +13,10 @@ in
       type = lib.types.lazyAttrsOf lib.types.deferredModule;
     };
 
+    configurationModules = lib.mkOption {
+      type = lib.types.lazyAttrsOf lib.types.deferredModule;
+    };
+
     configurations = lib.mkOption {
       type = lib.types.lazyAttrsOf (
         lib.types.submodule (
