@@ -25,6 +25,16 @@
         type = lib.types.listOf lib.types.singleLineStr;
         default = [ ];
       };
+
+      substituters = lib.mkOption {
+        type = lib.types.listOf lib.types.singleLineStr;
+        default = [ ];
+      };
+
+      trusted-substituters = lib.mkOption {
+        type = lib.types.listOf lib.types.singleLineStr;
+        default = [ ];
+      };
     };
 
     polyModule = lib.mkOption {
