@@ -15,11 +15,7 @@ let
   };
 in
 {
-  flake-file.inputs.comin = {
-    url = "github:nlewo/comin";
-    inputs.nixpkgs.follows = "nixpkgs";
-    inputs.flake-compat.follows = "flake-compat";
-  };
+  flake-file.inputs.comin.url = "github:nlewo/comin";
 
   nixos.modules.nixos =
     { pkgs, ... }:

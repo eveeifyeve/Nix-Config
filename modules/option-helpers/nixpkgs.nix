@@ -53,10 +53,7 @@ in
       nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
 
       # Temp poly module.
-      finix-nixpkgs-poly = {
-        url = "github:eveeifyeve/nixpkgs-finix-poly";
-        inputs.nixpkgs.follows = "nixpkgs";
-      };
+      finix-nixpkgs-poly.url = "github:eveeifyeve/nixpkgs-finix-poly";
     };
 
     perSystem =
