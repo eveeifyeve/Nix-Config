@@ -115,6 +115,10 @@ in
         ];
       };
 
+    nixos.modules.base.imports = [
+      inputs.sops-nix.nixosModules.sops
+    ];
+
     perSystem =
       { pkgs, ... }:
       {

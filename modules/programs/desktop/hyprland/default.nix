@@ -3,14 +3,7 @@ let
   hyprland-packages = pkgs: inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system};
 in
 {
-  flake-file.inputs.hyprland = {
-    url = "github:hyprwm/Hyprland";
-    inputs = {
-      nixpkgs.follows = "nixpkgs";
-      systems.follows = "systems";
-      pre-commit-hooks.follows = "git-hooks";
-    };
-  };
+  flake-file.inputs.hyprland.url = "github:hyprwm/Hyprland";
 
   nixos.modules.gui =
     { pkgs, ... }:

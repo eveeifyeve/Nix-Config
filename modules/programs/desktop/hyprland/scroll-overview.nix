@@ -1,13 +1,6 @@
 { lib, inputs, ... }:
 {
-  flake-file.inputs.hyprland-scroll-overview = {
-    url = "github:yayuuu/hyprland-scroll-overview";
-    inputs = {
-      nixpkgs.follows = "nixpkgs";
-      hyprland.follows = "hyprland";
-      flake-parts.follows = "nixpkgs";
-    };
-  };
+  flake-file.inputs.hyprland-scroll-overview.url = "github:yayuuu/hyprland-scroll-overview";
 
   homeManager.modules.gui =
     { pkgs, ... }:

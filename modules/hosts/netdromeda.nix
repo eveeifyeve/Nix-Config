@@ -3,9 +3,9 @@
   nixos.configurations.netdromeda.module = nixosArgs: {
     nixpkgs.hostPlatform = "x86_64-linux";
 
-    sops.secrets.step_ca_password = {
-      owner = "step-ca";
-    };
+    # sops.secrets.step_ca_password = {
+    #   owner = "step-ca";
+    # };
 
     imports = [
       config.nixos.modules.base
@@ -17,11 +17,9 @@
 
     #TODO: migrate to modular services when ready.
     services.kea = {
-      dhcp-dns = {
+      dhcp-ddns = {
         enable = true;
-        setting = {
-
-        };
+        setting = { };
       };
       dhcp4 = {
         enable = true;
