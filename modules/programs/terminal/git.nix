@@ -1,7 +1,10 @@
 { config, ... }:
 {
   home.base = {
-    programs.git.settings.user = { inherit (config.users.eveeifyeve) name email; };
+    programs.git.settings.user = {
+      inherit (config.users.eveeifyeve) name;
+      email = "open-source@eveeifyeve.dev";
+    };
   };
 
   homeManager.modules.base = {

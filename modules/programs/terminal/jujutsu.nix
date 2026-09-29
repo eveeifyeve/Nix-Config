@@ -7,7 +7,10 @@
   };
 
   home.gui = {
-    programs.jujutsu.settings.user = { inherit (config.users.eveeifyeve) name email; };
+    programs.jujutsu.settings.user = {
+      inherit (config.users.eveeifyeve) name;
+      email = "open-source@eveeifyeve.dev";
+    };
   };
 
   homeManager.modules.gui = {
