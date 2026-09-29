@@ -14,7 +14,6 @@
         };
         noBlockedMessages.enable = true;
         readAllNotificationsButton.enable = true;
-        appleMusicRichPresence.enable = true;
         hideMedia.enable = true;
         volumeBooster.enable = true;
       };

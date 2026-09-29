@@ -21,6 +21,7 @@
       inputs = {
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
+        treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
       };
     };
     direnv-instant = {
@@ -38,7 +39,9 @@
       url = "github:mightyiam/files";
       flake = false;
     };
-    finix.url = "github:finix-community/finix";
+    finix = {
+      url = "github:finix-community/finix";
+    };
     finix-nixpkgs-poly = {
       url = "github:eveeifyeve/nixpkgs-finix-poly";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -47,8 +50,12 @@
       url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-compat.url = "github:NixOS/flake-compat";
-    flake-file.url = "github:denful/flake-file";
+    flake-compat = {
+      url = "github:NixOS/flake-compat";
+    };
+    flake-file = {
+      url = "github:denful/flake-file";
+    };
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
@@ -95,20 +102,32 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    import-tree.url = "github:denful/import-tree";
+    import-tree = {
+      url = "github:denful/import-tree";
+    };
     jj-gh = {
       url = "github:mrjones2014/jj-gh";
       inputs = {
+        flake-utils.inputs.systems.follows = "systems";
         nixpkgs.follows = "nixpkgs";
         treefmt-nix.follows = "treefmt";
       };
     };
-    nix.url = "github:NixOS/nix";
+    nix = {
+      url = "github:NixOS/nix";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-parts.follows = "flake-parts";
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     nix-darwin = {
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-homebrew.url = "github:zhaofengli-wip/nix-homebrew";
+    nix-homebrew = {
+      url = "github:zhaofengli-wip/nix-homebrew";
+    };
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -116,6 +135,10 @@
     nixbsd = {
       url = "github:nixos-bsd/nixbsd";
       inputs = {
+        cppnix.inputs = {
+          flake-compat.follows = "flake-compat";
+          flake-parts.follows = "flake-parts";
+        };
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
       };
@@ -123,17 +146,21 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs = {
-        flake-compat.follows = "flake-compat";
         flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         nixpkgs-nixcord.follows = "nixpkgs";
       };
     };
-    nixpkgs.url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
-    nixpkgs-kotlin-lsp.url = "github:bew/nixpkgs/init-kotlin-lsp";
+    nixpkgs = {
+      url = "https://channels.nixos.org/nixpkgs-unstable/nixexprs.tar.zst";
+    };
+    nixpkgs-kotlin-lsp = {
+      url = "github:bew/nixpkgs/init-kotlin-lsp";
+    };
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs = {
+        flake-parts.follows = "flake-parts";
         nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
       };
@@ -153,14 +180,36 @@
     system-manager = {
       url = "github:nixos-bsd/nixbsd";
       inputs = {
+        cppnix.inputs = {
+          flake-compat.follows = "flake-compat";
+          flake-parts.follows = "flake-parts";
+        };
         flake-compat.follows = "flake-compat";
         nixpkgs.follows = "nixpkgs";
       };
     };
-    systems.url = "github:nix-systems/default/future-26.11";
+    systems = {
+      url = "github:nix-systems/default/future-26.11";
+    };
     treefmt = {
       url = "github:numtide/treefmt-nix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    vicinae = {
+      url = "github:vicinaehq/vicinae";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
+    };
+    vicinae-extensions = {
+      url = "github:vicinaehq/extensions";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        vicinae.follows = "vicinae";
+      };
     };
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";

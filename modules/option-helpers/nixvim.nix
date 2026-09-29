@@ -86,11 +86,7 @@
     })
     // {
       nixvim.modules.base.plugins.dap.configurations = config.nixvim.dap-config;
-      flake-file.inputs.nixvim = {
-        url = "github:nix-community/nixvim";
-        inputs.nixpkgs.follows = "nixpkgs";
-        inputs.systems.follows = "systems";
-      };
+      flake-file.inputs.nixvim.url = "github:nix-community/nixvim";
 
       _module.args.nixvim = inputs.nixvim.lib.overlay |> lib.extend |> lib.getAttr "nixvim";
 

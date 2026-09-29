@@ -30,10 +30,6 @@ in
   config = {
     flake.nixosConfigurations =
       cfg.configurations |> lib.mapAttrs (_name: { evaluation, ... }: evaluation);
-    flake-file.inputs.system-manager = {
-      url = "github:nixos-bsd/nixbsd";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "flake-compat";
-    };
+    flake-file.inputs.system-manager.url = "github:nixos-bsd/nixbsd";
   };
 }

@@ -1,13 +1,7 @@
 { inputs, ... }:
 {
   imports = [ inputs.git-hooks.flakeModule ];
-  flake-file.inputs = {
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-compat.follows = "flake-compat";
-    };
-  };
+  flake-file.inputs.git-hooks.url = "github:cachix/git-hooks.nix";
 
   perSystem =
     psArgs@{ pkgs, ... }:

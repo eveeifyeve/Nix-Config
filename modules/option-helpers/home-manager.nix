@@ -11,10 +11,7 @@
   };
 
   config = {
-    flake-file.inputs.home-manager = {
-      url = "github:eveeifyeve/home-manager/rift";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-file.inputs.home-manager.url = "github:eveeifyeve/home-manager/rift";
 
     _module.args.homeManager = inputs.home-manager.lib;
 

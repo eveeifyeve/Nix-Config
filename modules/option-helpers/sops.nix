@@ -97,10 +97,7 @@ in
   };
 
   config = {
-    flake-file.inputs.sops-nix = {
-      url = "github:Mic92/sops-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-file.inputs.sops-nix.url = "github:Mic92/sops-nix";
 
     sops.keys = lib.flatten (lib.mapAttrsToList (_: user: user.sops.key) config.users);
     sops.creation-rules = lib.flatten (

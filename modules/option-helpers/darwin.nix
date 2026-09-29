@@ -36,10 +36,7 @@ in
   };
 
   config = {
-    flake-file.inputs.nix-darwin = {
-      url = "github:nix-darwin/nix-darwin";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    flake-file.inputs.nix-darwin.url = "github:nix-darwin/nix-darwin";
 
     # For Nixd
     nixos.modules.nixos = {

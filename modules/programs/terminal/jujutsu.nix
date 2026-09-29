@@ -1,10 +1,6 @@
 { inputs, config, ... }:
 {
-  flake-file.inputs.jj-gh = {
-    url = "github:mrjones2014/jj-gh";
-    inputs.nixpkgs.follows = "nixpkgs";
-    inputs.treefmt-nix.follows = "treefmt";
-  };
+  flake-file.inputs.jj-gh.url = "github:mrjones2014/jj-gh";
 
   home.gui = {
     programs.jujutsu.settings.user = {
