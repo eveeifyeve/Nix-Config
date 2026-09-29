@@ -1,7 +1,26 @@
-{ inputs, ... }:
+{ inputs, lib, ... }:
 let
   polyModule = pkgs: {
-    nix.package = inputs.nix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    nix.package = inputs.nix.packages.${pkgs.stdenv.hostPlatform.system}.default.overrideScope (
+      _: _: {
+        boost =
+          (pkgs.boost186.override {
+            extraB2Args = [
+              "--with-container"
+              "--with-context"
+              "--with-coroutine"
+              "--with-iostreams"
+              "--with-url"
+            ];
+            enableIcu = false;
+          }).overrideAttrs
+            (old: {
+              # Need to remove `--with-*` to use `--with-libraries=...`
+              buildPhase = lib.replaceStrings [ "--without-python" ] [ "" ] old.buildPhase;
+              installPhase = lib.replaceStrings [ "--without-python" ] [ "" ] old.installPhase;
+            });
+      }
+    );
   };
 in
 {

@@ -1,8 +1,8 @@
 {
-  nixpkgs.config.allowUnfreePackages = [ "idea" ];
+  nixpkgs.config.allowUnfreePackages = [ "intellij-idea" ];
   homeManager.modules.gui =
     { pkgs, ... }:
     {
-      home.packages = [ pkgs.jetbrains.idea ];
+      home.packages = [ pkgs.intellij-idea ];
     };
 }
