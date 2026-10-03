@@ -2,7 +2,10 @@
   home.gui =
     hmArgs@{ pkgs, ... }:
     {
-      sops.secrets.openrouter-apikey-eveeifyeve.sopsFile = ./secrets/openrouter-apikey;
+      sops.secrets = {
+        openrouter-apikey-eveeifyeve.sopsFile = ./secrets/openrouter-apikey;
+        opencode-go-apikey-eveeifyeve.sopsFile = ./secrets/opencode-go-apikey;
+      };
 
       home.file.".omp/agent/models.yml".source = (pkgs.formats.yaml { }).generate "models.yml" {
         providers.openrouter.apiKey = "!cat ${hmArgs.config.sops.secrets.openrouter-apikey-eveeifyeve.path}";
