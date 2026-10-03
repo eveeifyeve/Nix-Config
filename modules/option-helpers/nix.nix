@@ -17,6 +17,12 @@
         default = true;
       };
 
+      http3 = lib.mkOption {
+        readOnly = true;
+        type = lib.types.bool;
+        default = true;
+      };
+
       experimental-features = lib.mkOption {
         type = lib.types.listOf lib.types.singleLineStr;
         default = [ ];
