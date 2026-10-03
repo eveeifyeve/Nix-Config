@@ -31,6 +31,11 @@
             workspace_names = [ ];
           };
 
+          settings = {
+            animate = true;
+            horizontal_mouse_warp = "top-to-bottom";
+          };
+
           keys = {
             "Alt + T".exec = "ghostty";
             "Alt + Shift + F" = "toggle_fullscreen";
@@ -38,10 +43,10 @@
             "Alt + Shift + J".move_node = "down";
             "Alt + Shift + K".move_node = "up";
             "Alt + Shift + L".move_node = "right";
-            "Alt + H ".move_node = "left";
-            "Alt + J".move_node = "down";
-            "Alt + K".move_node = "up";
-            "Alt + L".move_node = "right";
+            "Alt + H ".move_focus = "left";
+            "Alt + J".move_focus = "down";
+            "Alt + K".move_focus = "up";
+            "Alt + L".move_focus = "right";
           };
         };
       })
