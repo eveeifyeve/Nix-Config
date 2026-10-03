@@ -146,10 +146,10 @@
     nixcord = {
       url = "github:kaylorben/nixcord";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
-        nixpkgs-nixcord.follows = "nixpkgs";
         home-manager.follows = "home-manager";
         nix-darwin.follows = "nix-darwin";
+        nixpkgs.follows = "nixpkgs";
+        nixpkgs-nixcord.follows = "nixpkgs";
       };
     };
     nixpkgs = {
