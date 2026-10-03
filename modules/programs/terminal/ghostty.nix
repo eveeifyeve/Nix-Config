@@ -1,7 +1,7 @@
 { lib, ... }:
 {
   homeManager.modules.gui =
-    { pkgs, config, ... }:
+    { pkgs, ... }:
     {
       programs.ghostty = {
         enable = true;
@@ -13,7 +13,5 @@
           background-blur = true;
         };
       };
-
-      programs.tmux.extraConfig = "set -g @continuum-boot-options '${config.programs.ghostty.package}'";
     };
 }
