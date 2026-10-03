@@ -166,6 +166,10 @@
         systems.follows = "systems";
       };
     };
+    omp = {
+      url = "github:can1357/oh-my-pi";
+      flake = false;
+    };
     sops-nix = {
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";

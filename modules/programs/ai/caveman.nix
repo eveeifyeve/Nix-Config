@@ -5,10 +5,15 @@
     flake = false;
   };
 
+  # Caveman skills mounted as omp user skills (~/.omp/agent/skills/<name>/).
   homeManager.modules.gui = {
-    programs.opencode.skills =
-      let
-        skills = [
+    home.file = builtins.listToAttrs (
+      map
+        (name: {
+          name = ".omp/agent/skills/${name}";
+          value.source = "${inputs.caveman}/skills/${name}";
+        })
+        [
           "cavecrew"
           "caveman-commit"
           "caveman-compress"
@@ -16,13 +21,7 @@
           "caveman-review"
           "caveman-stats"
           "caveman"
-        ];
-      in
-      builtins.listToAttrs (
-        map (name: {
-          inherit name;
-          value = "${inputs.caveman}/skills/${name}";
-        }) skills
-      );
+        ]
+    );
   };
 }

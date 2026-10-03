@@ -1478,6 +1478,22 @@
         "type": "github"
       }
     },
+    "omp": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1790989635,
+        "narHash": "sha256-6qFSOntEUea67kQSprBxGjEDbp3zY1jlzpEqBH3ryNs=",
+        "owner": "can1357",
+        "repo": "oh-my-pi",
+        "rev": "9348320cc4a30a7195d36a1f05a6c11bcb701a17",
+        "type": "github"
+      },
+      "original": {
+        "owner": "can1357",
+        "repo": "oh-my-pi",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "catppuccin-wallpapers": "catppuccin-wallpapers",
@@ -1510,6 +1526,7 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-kotlin-lsp": "nixpkgs-kotlin-lsp",
         "nixvim": "nixvim",
+        "omp": "omp",
         "sops-nix": "sops-nix",
         "stylix": "stylix",
         "system-manager": "system-manager",
