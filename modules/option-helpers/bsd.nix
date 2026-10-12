@@ -28,7 +28,7 @@ in
     );
   };
   config = {
-    flake-file.inputs.nixbsd.url = "github:nixos-bsd/nixbsd";
+    flake-file.inputs.nixbsd.url = "github:nix-community/nixbsd";
     flake.nixosConfigurations =
       cfg.configurations |> lib.mapAttrs (_name: { evaluation, ... }: evaluation);
   };
