@@ -35,7 +35,7 @@ in
       type = lib.types.deferredModule;
       default = {
         nixpkgs = cfg.args;
-        nix.nixPath = [ "nixpkgs=${inputs.nixpkgs}" ];
+        nix.nixPath = [ "nixpkgs=${inputs.nixpkgs.outPath}" ];
       };
     };
 
@@ -68,11 +68,11 @@ in
       };
 
     nixos.modules.nixos = cfg.polyModule;
+    darwin.modules.base = cfg.polyModule;
     finix.modules.base = {
       imports = [ inputs.finix-nixpkgs-poly.nixosModules.default ];
     }
     // cfg.finixPoly;
-    #darwin.modules.base = cfg.polyModule;
     homeManager.modules.base = cfg.polyModule;
   };
 }

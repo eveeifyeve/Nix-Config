@@ -132,8 +132,14 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-output-monitor = {
+      url = "github:xokdvium/nix-output-monitor/fetch-to-store-activity";
+      inputs.git-hooks.follows = "git-hooks";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.inputs.systems.follows = "systems";
+    };
     nixbsd = {
-      url = "github:nixos-bsd/nixbsd";
+      url = "github:nix-community/nixbsd";
       inputs = {
         cppnix.inputs = {
           flake-compat.follows = "flake-compat";
@@ -149,7 +155,6 @@
         home-manager.follows = "home-manager";
         nix-darwin.follows = "nix-darwin";
         nixpkgs.follows = "nixpkgs";
-        nixpkgs-nixcord.follows = "nixpkgs";
       };
     };
     nixpkgs = {

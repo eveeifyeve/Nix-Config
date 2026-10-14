@@ -393,6 +393,25 @@
         "type": "github"
       }
     },
+    "flake-utils_2": {
+      "inputs": {
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731533236,
+        "narHash": "sha256-l0KFg5HjrsfsO/JpG+r7fRrqm12kzFHyUHqHCVpMMbI=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "11707dc2f618dd54ca8739b309ec4fc024de578b",
+        "type": "github"
+      },
+      "original": {
+        "id": "flake-utils",
+        "type": "indirect"
+      }
+    },
     "fromYaml": {
       "flake": false,
       "locked": {
@@ -1059,6 +1078,31 @@
         "type": "github"
       }
     },
+    "nix-output-monitor": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "git-hooks": [
+          "git-hooks"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788906100,
+        "narHash": "sha256-ZIkZO0xiczYXiEAySQiUNww1AHd4kV187WdubkpPxwA=",
+        "owner": "xokdvium",
+        "repo": "nix-output-monitor",
+        "rev": "0825c28af5a8576de1ea48e77336809756eadb84",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xokdvium",
+        "ref": "fetch-to-store-activity",
+        "repo": "nix-output-monitor",
+        "type": "github"
+      }
+    },
     "nixbsd": {
       "inputs": {
         "flake-compat": [
@@ -1071,13 +1115,13 @@
       "locked": {
         "lastModified": 1791907201,
         "narHash": "sha256-aBfAqChNSvgmQG05d5qEpFvRFNjLN85PKSFRGBJ3qaA=",
-        "owner": "nixos-bsd",
+        "owner": "nix-community",
         "repo": "nixbsd",
         "rev": "8cf417b68b3426f6f4a3fcafdaf2fa3dfde0195d",
         "type": "github"
       },
       "original": {
-        "owner": "nixos-bsd",
+        "owner": "nix-community",
         "repo": "nixbsd",
         "type": "github"
       }
@@ -1330,6 +1374,7 @@
         "nix-darwin": "nix-darwin",
         "nix-homebrew": "nix-homebrew",
         "nix-index-database": "nix-index-database",
+        "nix-output-monitor": "nix-output-monitor",
         "nixbsd": "nixbsd",
         "nixcord": "nixcord",
         "nixpkgs": "nixpkgs",
