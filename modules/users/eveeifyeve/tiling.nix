@@ -7,6 +7,11 @@
         programs.rift-wm.config = {
           settings.layout = {
             mode = "scrolling";
+
+            # Single window fills usable width (screen minus gaps);
+            # stored width returns when a second column appears.
+            scrolling.expand_single_column = true;
+
             gaps =
               let
                 generalgap = 15;
